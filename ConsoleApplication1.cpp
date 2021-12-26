@@ -7,10 +7,11 @@ using namespace std;
 int main( int argc, const char * argv[]) {
 
     
+    
     int num1, num2;
     char act;
     
-
+    
     cout << "Write first number: ";
     cin >> num1;
     cout << "Write second num: ";
@@ -25,13 +26,18 @@ int main( int argc, const char * argv[]) {
         cout << num1 - num2;
     };
     if (act == '/' || act == ':') {
-        if (num2 == 0) {
-            cout << "Error, number2 can't be zero";
-            return 0;
+
+        switch (num2) {
+            case 0:
+                cout << "Error, number2 can't be zero";
+                break;
+            default:
+                double res;
+                res = (double)num1 / (double)num2;
+                cout << res;
         }
-        else {
-            cout << num1 / num2;
-        };
+
+  
 
     };
     if (act == '*') {
